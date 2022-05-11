@@ -1,6 +1,6 @@
 /**************************************************
  * Essential C++ -- Stanley Lippman
- * Addison-Wesley 
+ * Addison-Wesley
  * ISBN 0-201-48518-4
  * homepage: www.objectwrite.com
  * email: slippman@objectwrite.com
@@ -14,17 +14,12 @@ using namespace std;
 
 int main()
 {
-	user_profile up;
+  user_profile up;
 
-	if ( greet_user( &up ) )
-	{
-		 play_game( &up );
-		 display_statistics( &up );
-	}
+  if (greet_user(&up)) {
+    play_game(&up);
+    display_statistics(&up);
+  }
 
-	return 0;
+    return 0;
 }
-
-
-
-
