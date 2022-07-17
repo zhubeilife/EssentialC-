@@ -1,4 +1,4 @@
-APP      = test
+APP      = testcode
 SRCS     = $(wildcard *.cpp)
 OBJS     = $(SRCS:.cpp=.o)
 
