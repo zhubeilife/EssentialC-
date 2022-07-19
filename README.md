@@ -23,3 +23,12 @@ void display(const vector<int> &vec)
 ```c++
 const vector<int>* (*seq_array[]) (int) = {}
 ```
+
++ 2.9 setting up a header file
+    可能需要再看看详细的介绍，头文件里应该放什么，可能要看google style?
+
++ 怎么debug c++程序，尤其是用clion
+
++ 怎么写cmake
+
++ 怎么用c++常用的 linter 、compiler 、test
