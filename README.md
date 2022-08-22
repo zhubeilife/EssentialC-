@@ -32,3 +32,14 @@ const vector<int>* (*seq_array[]) (int) = {}
 + 怎么写cmake
 
 + 怎么用c++常用的 linter 、compiler 、test
+
++ Question P132
+
+“function object实现了我们原本可能以独立函数加以定义的事物。但又何必如此呢？主要是为了效率。我们可以令call运算符成为inline，从而消除“通过函数指针来调用函数”时需付出的额外代价。”
+
++ Questions when and why should use iostream iterator
+
+Section 3.10 iostream_iterator examples	
+
+or I should call this questions what't iterator for? it's some good way to use poiter or somethings?
+

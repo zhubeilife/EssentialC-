@@ -241,6 +241,21 @@ filter_ver2( const vector<int> &vec,
     return nvec;
 }
 
+vector<int> my_filter_ver2(
+    const vector<int> &vec,
+    int val, less<int> &lt
+    )
+{
+  vector<int> nvec;
+  vector<int>::const_iterator iter = vec.begin();
+
+  while ((iter = find_if(iter, vec.end()), bind2nd(lt, val)))
+  {
+    nvec.push_back(*iter);
+    iter++;
+  }
+}
+
 template <typename InputIterator, typename OutputIterator,
 		  typename ElemType,      typename Comp>
 OutputIterator 
@@ -253,6 +268,13 @@ filter_ver3( InputIterator first, InputIterator last,
              // assign value, then advance both iterators
              *at++ = *first++;
     return at;
+}
+
+void call_filter_ver3()
+{
+  std::vector<int> a = {12, 8, 43, 0, 8, 12, 11};
+  vector<int> b(a.size());
+  filter_ver3(a.begin(), a.end(), b.begin(), 3, less<int>());
 }
 
 vector<int> sub_vec( const vector<int> &vec, int val )
@@ -268,6 +290,16 @@ vector<int> sub_vec( const vector<int> &vec, int val )
     local_vec.erase( iter, local_vec.end() );
     return local_vec;
 }
+
+template <typename ElementType, typename Comp>
+vector<ElementType>
+template_sub_vec(const vector<ElementType> input, Comp pcom)
+{
+    vector<ElementType> local_vec(input);
+    sort(local_vec.begin(), local_vec.end());
+
+}
+
 
 void prog_filter_vers()
 {
