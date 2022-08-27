@@ -8,6 +8,8 @@
 
 + 智能指针
 
++ 变量的声明和定义，有的时候还是搞得不是很清楚
+
 + 传参考，传值
 
 reference to const vector
