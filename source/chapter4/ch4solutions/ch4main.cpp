@@ -185,6 +185,7 @@ inline UserProfile::UserProfile( string login, uLevel level )
 {}
 
 #include <cstdlib>
+#include <stdlib.h>
 inline UserProfile::UserProfile()
     : _login( "guest" ), _user_level( Beginner ), 
       _times_logged( 1 ), _guesses( 0 ), _correct_guesses( 0 )
@@ -195,7 +196,9 @@ inline UserProfile::UserProfile()
    // Standard C library function in <cstdlib>
    // turns an integer into an ascii representation
    // _itoa( int value, char *buffer, int radix )
-   _itoa( id++, buffer, 10 );
+   // TODO(bei.zhang)
+   // just commnet this to compile
+   //_itoa( id++, buffer, 10 );
 
    // add a unique id during session to guest login
    _login += buffer;
@@ -404,6 +407,20 @@ Matrix( const elemType *array )
     
 }
 
+void test_1()
+{
+
+  Stack st1;
+  Stack st2 = Stack();
+
+  // This the compiler should think is a function declaration
+  // but if it has params, different
+  // Stack st3();
+
+  int a = 0;
+  int A = int(0);
+}
+
 void ex_4_1() 
 {
 
@@ -522,8 +539,10 @@ pf tbl[]  = {
 
 int main() 
 {
-	// ex_4_1();
-	// ex_4_2();
+    // ex_4_1();
+	test_1();
+
+    // ex_4_2();
 	// ex_4_3();
 	// ex_4_4();
 	// ex_4_5();
