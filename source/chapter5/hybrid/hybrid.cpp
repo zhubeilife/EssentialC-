@@ -19,14 +19,7 @@ extern void prog1();
 extern void prog2();
 extern void prog3();
 
-int main()
-{
-	// prog1();
-	// prog2();
-	prog3();
 
-	return 0; // quiets vc++
-}
 
 // base class declaration
 // normally would go in a program header file: .h
@@ -607,4 +600,23 @@ gen_elems( int pos ) const
 		for ( ; ix <= end_pos; ++ix )
 			  _elems.push_back( ix*(3*ix-1)/2 );
 	}
+}
+
+#include <typeinfo>
+void test_5_10()
+{
+  Fibonacci fib;
+  num_sequence *ps = &fib;
+  ps->what_am_i();
+}
+
+int main()
+{
+  // prog1();
+  // prog2();
+  // prog3();
+
+  test_5_10();
+
+  return 0; // quiets vc++
 }

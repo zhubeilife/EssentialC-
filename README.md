@@ -45,3 +45,7 @@ Section 3.10 iostream_iterator examples
 
 or I should call this questions what't iterator for? it's some good way to use poiter or somethings?
 
+
++ rhs : right hand side
++ 
++ lfh : left hand side
