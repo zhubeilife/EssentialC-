@@ -49,3 +49,7 @@ or I should call this questions what't iterator for? it's some good way to use p
 + rhs : right hand side
 + 
 + lfh : left hand side
+
++ template can be called kind of parameter?
+
++ C++ 模板沉思录https://www.modb.pro/db/162159
