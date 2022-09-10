@@ -45,7 +45,6 @@ Section 3.10 iostream_iterator examples
 
 or I should call this questions what't iterator for? it's some good way to use poiter or somethings?
 
-
 + rhs : right hand side
 + 
 + lfh : left hand side
@@ -53,3 +52,32 @@ or I should call this questions what't iterator for? it's some good way to use p
 + template can be called kind of parameter?
 
 + C++ 模板沉思录https://www.modb.pro/db/162159
+
++ template是跟具体的类型强绑定的，/source/chapter6/binarytree 里面，只用BinaryTree<string>类型的 ostream是logfiles
+
+```c++
+	ofstream log( "logfile.txt" );
+	if ( ! log ){
+		 cerr << "error: unable to open file!\n";
+		 return -1;
+	}
+	else BinaryTree<string>::current_os( &log );
+
+    BinaryTree< int > bt;
+
+	bt.insert( 7 );
+	bt.insert( 5 );
+	bt.insert( 9 );
+	bt.insert( 6 );
+	bt.insert( 3 );
+
+	BinaryTree< string > bt2;
+	bt2.insert( "Piglet" );
+	bt2.insert( "Pooh" );
+	bt2.insert( "Eeyore" );
+	bt2.insert( "Kanga" );
+	bt2.insert( "Tigger" );
+```
+
++ Template argument deduction
+In order to instantiate a function template, every template argument must be known, but not every template argument has to be specified. When possible, the compiler will deduce the missing template arguments from the function arguments. This occurs when a function call is attempted, when an address of a function template is taken, and in some other contexts:

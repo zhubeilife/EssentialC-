@@ -400,9 +400,15 @@ copy( BTnode<elemType> *&tar, BTnode<elemType> *src )
 #include <fstream>
 using namespace std;
 
-main() 
+int main()
 {
-	/*
+	ofstream log( "logfile.txt" );
+	if ( ! log ){
+		 cerr << "error: unable to open file!\n";
+		 return -1;
+	}
+	else BinaryTree<string>::current_os( &log );
+
     BinaryTree< int > bt;
 
 	bt.insert( 7 );
@@ -410,23 +416,13 @@ main()
 	bt.insert( 9 );
 	bt.insert( 6 );
 	bt.insert( 3 );
-    */
 
-	/*
-	BinaryTree< string > bt;
-	bt.insert( "Piglet" );
-	bt.insert( "Pooh" );
-	bt.insert( "Eeyore" );
-	bt.insert( "Kanga" ); 
-	bt.insert( "Tigger" );
-	*/
-
-	ofstream log( "logfile.txt" );
-	if ( ! log ){
-		 cerr << "error: unable to open file!\n";
-		 return -1;
-	}
-	else BinaryTree<string>::current_os( &log );
+	BinaryTree< string > bt2;
+	bt2.insert( "Piglet" );
+	bt2.insert( "Pooh" );
+	bt2.insert( "Eeyore" );
+	bt2.insert( "Kanga" );
+	bt2.insert( "Tigger" );
 
 	/*
 	int ia[] = { 24, 18, 36, 12, 14, 8, 24, 1, 42, 24, 8, 8, 16, 55 };
@@ -454,30 +450,30 @@ main()
 	log << endl << endl;
     */
 
-	BinaryTree<string> bt;
-    bt.insert( "Piglet" );
-    bt.insert( "Eeyore" );
-	bt.insert( "Roo" );
-
-	bt.insert( "Tigger" );
-	bt.insert( "Chris" );
-	bt.insert( "Pooh" );
-	bt.insert( "Kanga" );
-
-	log << "preorder traversal: \n";
-	bt.preorder( log );
-
-	log << "\n\nabout to remove root: Piglet\n";
-	bt.remove( "Piglet" );
-
-	log << "\n\npreorder traversal after Piglet removal: \n";
-	bt.preorder( log );
-
-	log << "\n\nabout to remove Eeyore\n";
-	bt.remove( "Eeyore" );
-
-	log << "\n\npreorder traversal after Piglet removal: \n";
-	bt.preorder( log );
+//	BinaryTree<string> bt;
+//    bt.insert( "Piglet" );
+//    bt.insert( "Eeyore" );
+//	bt.insert( "Roo" );
+//
+//	bt.insert( "Tigger" );
+//	bt.insert( "Chris" );
+//	bt.insert( "Pooh" );
+//	bt.insert( "Kanga" );
+//
+//	log << "preorder traversal: \n";
+//	bt.preorder( log );
+//
+//	log << "\n\nabout to remove root: Piglet\n";
+//	bt.remove( "Piglet" );
+//
+//	log << "\n\npreorder traversal after Piglet removal: \n";
+//	bt.preorder( log );
+//
+//	log << "\n\nabout to remove Eeyore\n";
+//	bt.remove( "Eeyore" );
+//
+//	log << "\n\npreorder traversal after Piglet removal: \n";
+//	bt.preorder( log );
 
 //	log << "\n\ninorder traversal:\n";
 //	bt.inorder( log );
